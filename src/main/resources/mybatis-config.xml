@@ -13,13 +13,22 @@
 <!--            事务管理采用JDBC方式-->
             <transactionManager type="JDBC"></transactionManager>
 <!--            利用Mybatis自带连接池管理-->
-            <dataSource type="POOLED">
+<!--            <dataSource type="POOLED"></dataSource>-->
+<!--            MyBatis与Druid的整合-->
+            <dataSource type="com.imooc.oa.datasource.DruidDataSourceFactory">
 <!--                JDBC链接属性-->
-                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/imooc-oa?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai&amp;allowPublicKeyRetrieval=true"></property>
                 <property name="username" value="root"></property>
                 <property name="password" value="123456"></property>
+<!--                连接池初始连接数-->
+                <property name="initialSize" value="10"/>
+<!--                连接池最大连接数-->
+                <property name="maxActive" value="20"/>
             </dataSource>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="mappers/test.xml"></mapper>
+    </mappers>
 </configuration>
