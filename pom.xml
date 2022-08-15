@@ -38,6 +38,8 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+<!--            只参与测试-->
+            <scope>test</scope>
         </dependency>
 <!--        Logback日志输出组件-->
         <dependency>
@@ -45,7 +47,20 @@
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-
+<!--        Freemarker依赖-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.29</version>
+        </dependency>
+<!--        servlet-api-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+<!--            依赖只参与编译测试-->
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
